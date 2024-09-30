@@ -38,55 +38,44 @@ image = cv2.imread('gems.jpg')
 
 # Convert the image to grayscale
 gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
-hist_original = cv2.calcHist([gray_image], [0], None, [256], [0, 256])
-
-# Apply histogram equalization
-equalized_image = cv2.equalizeHist(gray_image)
-
-# Plotting the original grayscale image, equalized image, and histograms
-plt.figure(figsize=(10, 7))
-
-# Show original grayscale image
-plt.subplot(2, 2, 1)
 plt.imshow(gray_image, cmap='gray')
 plt.title('Original Grayscale Image')
 plt.axis('off')
 
-# Show equalized grayscale image
-plt.subplot(2, 2, 2)
-plt.imshow(equalized_image, cmap='gray')
-plt.title('Equalized Image')
-plt.axis('off')
-
+hist_original = cv2.calcHist([gray_image], [0], None, [256], [0, 256])
 # Plot histogram of the original grayscale image
-plt.subplot(2, 2, 3)
 plt.plot(hist_original, color='black')
 plt.title('Original Histogram')
 plt.xlim([0, 256])
 
+
+# Apply histogram equalization
+equalized_image = cv2.equalizeHist(gray_image)
+plt.imshow(equalized_image, cmap='gray')
+plt.title('Equalized Image')
+plt.axis('off')
+
 # Plot histogram of the equalized image
-plt.subplot(2, 2, 4)
-hist_equalized = cv2.calcHist([equalized_image], [0], None, [256], [0, 256])
+hist_equalized = cv2.calcHist([equalized_image], [0], None, [255], [0, 255])
 plt.plot(hist_equalized, color='black')
 plt.title('Equalized Histogram')
-plt.xlim([0, 256])
-
-plt.tight_layout()
-plt.show()
- 
-
-
-
-
-
+plt.xlim([0, 255])
 
 ```
 ## Output:
 ### Input Grayscale Image and Color Image
+![image](https://github.com/user-attachments/assets/e74796cf-8f43-47d7-b836-85d96a8ab22d)
+
 ### Histogram of Grayscale Image and any channel of Color Image
+![image](https://github.com/user-attachments/assets/55705fab-5cb7-408d-a0d8-39ab05e45eef)
+
 ### Histogram Equalization of Grayscale Image.
-![image](https://github.com/user-attachments/assets/7b1547aa-2ea8-42b2-bb7f-c0810b343dda)
+![image](https://github.com/user-attachments/assets/301c9855-e4f3-4c1b-913b-ad6067919bf7)
+### Histogram of the equalized image
+![image](https://github.com/user-attachments/assets/e587f3b7-3fd4-4c1d-a2c9-2e71289112b0)
+
+
+
 
 
 
