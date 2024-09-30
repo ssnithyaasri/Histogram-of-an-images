@@ -42,7 +42,7 @@ plt.imshow(gray_image, cmap='gray')
 plt.title('Original Grayscale Image')
 plt.axis('off')
 
-hist_original = cv2.calcHist([gray_image], [0], None, [256], [0, 256])
+hist_original = cv2.calcHist([gray_image], [0], None, [255], [0, 255])
 # Plot histogram of the original grayscale image
 plt.plot(hist_original, color='black')
 plt.title('Original Histogram')
@@ -67,7 +67,8 @@ plt.xlim([0, 255])
 ![image](https://github.com/user-attachments/assets/e74796cf-8f43-47d7-b836-85d96a8ab22d)
 
 ### Histogram of Grayscale Image and any channel of Color Image
-![image](https://github.com/user-attachments/assets/55705fab-5cb7-408d-a0d8-39ab05e45eef)
+![image](https://github.com/user-attachments/assets/d0953969-f4d1-4862-9356-85633ba4706d)
+
 
 ### Histogram Equalization of Grayscale Image.
 ![image](https://github.com/user-attachments/assets/301c9855-e4f3-4c1b-913b-ad6067919bf7)
